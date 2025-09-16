@@ -1,0 +1,108 @@
+$primaire: #11118B;
+$secondaire: #1a237e;
+$gris-clair: #e8eaf6;
+$texte: #272727;
+$blanc: #fff;
+
+$font-base: Arial, sans-serif;
+$font-lato: 'Lato', sans-serif;
+
+@mixin reset {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin titre($taille, $couleur: $primaire) {
+  font-family: $font-lato;
+  font-size: $taille;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+  color: $couleur;
+}
+
+@mixin paragraphe($taille: 23px, $couleur: $texte) {
+  font-family: $font-lato;
+  font-size: $taille;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  color: $couleur;
+}
+
+@mixin bouton {
+  display: inline-block;
+  background: $secondaire;
+  color: $blanc;
+  padding: 16px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 28px;
+}
+
+* {
+  @include reset;
+}
+
+body {
+  font-family: $font-base;
+  color: #333;
+  background-color: $blanc;
+}
+
+header {
+  background-color: $primaire;
+  color: $blanc;
+  text-align: left;
+  padding: 23px 0 23px 60px;
+}
+
+h1 {
+  @include titre(40px, $blanc);
+}
+
+.IMAGE img {
+  width: 100%;
+  display: block;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.intro {
+  padding-top: 60px;
+  padding-left: 60px;
+  text-align: left;
+
+  h2 {
+    @include titre(60px);
+    margin-bottom: 20px;
+  }
+
+  p {
+    @include paragraphe;
+  }
+
+  .btn {
+    @include bouton;
+  }
+}
+
+.principal {
+  background: $gris-clair;
+  max-width: 1320px;
+  margin: 60px ;
+  padding: 38px;
+
+  h3 {
+    @include titre(45px);
+  }
+
+  p {
+    @include paragraphe;
+    margin-top: 14px;
+    max-width: 1230px;
+  }
+}
